@@ -1,0 +1,509 @@
+
+/* Configurações gerais */
+:root {
+    --roxo: #6654d9;
+    --roxo-escuro: #4c3bb4;
+    --fundo: #f5f6fc;
+    --texto: #252642;
+    --texto-suave: #73758c;
+    --branco: #ffffff;
+    --verde: #21865b;
+    --vermelho: #cf414b;
+    --borda: #e7e8f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+.topo {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 20px 6%;
+}
+
+.marca {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icone-marca {
+    font-size: 36px;
+}
+
+.marca h1 {
+    font-size: 25px;
+    color: var(--roxo);
+    line-height: 1.3;
+}
+
+.marca p {
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.boas-vindas {
+    background: linear-gradient(120deg, #6654d9, #8878f0);
+    color: white;
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 10px 25px #6654d926;
+}
+
+.etiqueta {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    opacity: 0.85;
+}
+
+.boas-vindas h2 {
+    font-size: clamp(23px, 4vw, 32px);
+    margin: 10px 0;
+}
+
+.boas-vindas p {
+    max-width: 520px;
+    opacity: 0.92;
+}
+
+.ilustracao {
+    font-size: 72px;
+    flex-shrink: 0;
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.cartao-resumo {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cartao-resumo span {
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.cartao-resumo strong {
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--roxo);
+}
+
+.cartao-resumo:nth-child(3) strong {
+    color: var(--verde);
+}
+
+.cartao-resumo:nth-child(4) strong {
+    color: var(--vermelho);
+}
+
+.painel {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 5px 18px #25264208;
+}
+
+.painel h2 {
+    font-size: 21px;
+}
+
+.subtitulo {
+    color: var(--texto-suave);
+    font-size: 14px;
+    margin: 4px 0 22px;
+}
+
+#formTarefa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo label,
+.filtro-label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.filtro-label select {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #dcddeb;
+    border-radius: 9px;
+    padding: 12px;
+    background: white;
+    color: var(--texto);
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.filtro-label select:focus {
+    border-color: var(--roxo);
+    box-shadow: 0 0 0 3px #6654d91a;
+}
+
+.botao {
+    border: none;
+    border-radius: 9px;
+    padding: 12px 18px;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+}
+
+.botao-principal {
+    align-self: end;
+    background: var(--roxo);
+    color: white;
+}
+
+.botao-principal:hover {
+    background: var(--roxo-escuro);
+}
+
+.mensagem {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--verde);
+}
+
+.mensagem:empty {
+    display: none;
+}
+
+.cabecalho-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cabecalho-lista .subtitulo {
+    margin-bottom: 0;
+}
+
+.filtro-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.filtro-label select {
+    padding: 8px;
+    font-size: 13px;
+}
+
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarefa {
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: white;
+}
+
+.tarefa-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+}
+
+.tarefa-info input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    margin-top: 4px;
+    accent-color: var(--roxo);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.tarefa-conteudo {
+    min-width: 0;
+}
+
+.tarefa h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.tarefa p {
+    font-size: 13px;
+    color: var(--texto-suave);
+    overflow-wrap: anywhere;
+}
+
+.tarefa-concluida h3 {
+    text-decoration: line-through;
+    color: var(--texto-suave);
+}
+
+.tarefa-acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    background: #efedff;
+    color: var(--roxo);
+}
+
+.status.atrasada {
+    background: #ffeded;
+    color: var(--vermelho);
+}
+
+.status.concluida {
+    background: #e5f7ee;
+    color: var(--verde);
+}
+
+.status.proxima {
+    background: #fff3dc;
+    color: #95620b;
+}
+
+.botao-excluir {
+    border: 1px solid #f0d4d6;
+    color: var(--vermelho);
+    background: white;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.botao-excluir:hover {
+    background: #fff0f0;
+}
+
+.vazio {
+    text-align: center;
+    padding: 35px 15px;
+    color: var(--texto-suave);
+}
+
+.vazio span {
+    display: block;
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.dica {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 22px;
+    border-radius: 15px;
+    background: #eeecff;
+    margin-bottom: 30px;
+}
+
+.dica-icone {
+    font-size: 30px;
+}
+
+.dica h3 {
+    font-size: 16px;
+    color: var(--roxo-escuro);
+}
+
+.dica p {
+    color: #55516f;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 12px;
+    padding: 25px 15px;
+    border-top: 1px solid var(--borda);
+    background: white;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 750px) {
+    .resumo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .boas-vindas {
+        padding: 25px;
+    }
+
+    .ilustracao {
+        font-size: 48px;
+    }
+
+    .cabecalho-lista {
+        flex-direction: column;
+    }
+
+    .filtro-label {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filtro-label select {
+        flex: 1;
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding: 0 12px;
+        margin-top: 18px;
+    }
+
+    .topo {
+        padding: 16px;
+    }
+
+    .marca h1 {
+        font-size: 22px;
+    }
+
+    .marca p {
+        font-size: 11px;
+    }
+
+    .boas-vindas {
+        padding: 22px 18px;
+    }
+
+    .ilustracao {
+        display: none;
+    }
+
+    .resumo {
+        gap: 10px;
+        margin: 16px 0;
+    }
+
+    .cartao-resumo {
+        padding: 15px;
+    }
+
+    .cartao-resumo span {
+        font-size: 12px;
+    }
+
+    .cartao-resumo strong {
+        font-size: 26px;
+    }
+
+    .painel {
+        padding: 18px 14px;
+    }
+
+    #formTarefa {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .botao-principal {
+        width: 100%;
+    }
+
+    .tarefa {
+        align-items: flex-start;
+        padding: 13px 10px;
+        gap: 8px;
+    }
+
+    .tarefa-info {
+        gap: 8px;
+    }
+
+    .tarefa-acoes {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .status {
+        text-align: center;
+        max-width: 115px;
+    }
+
+    .dica {
+        padding: 17px;
+    }
+}

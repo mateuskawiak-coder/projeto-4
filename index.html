@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organizador de tarefas escolares para não esquecer atividades e trabalhos.">
+    <title>EstudaFácil | Organizador Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="marca">
+            <span class="icone-marca">📚</span>
+            <div>
+                <h1>EstudaFácil</h1>
+                <p>Organize seus estudos, conquiste seus objetivos!</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="boas-vindas">
+            <div>
+                <span class="etiqueta">SEU ESPAÇO DE ESTUDOS</span>
+                <h2>Não esqueça nenhuma tarefa! 🎯</h2>
+                <p>Organize suas atividades e acompanhe seus prazos em um só lugar.</p>
+            </div>
+            <div class="ilustracao" aria-hidden="true">📝</div>
+        </section>
+
+        <section class="resumo" aria-label="Resumo das tarefas">
+            <article class="cartao-resumo">
+                <span>📌 Total de tarefas</span>
+                <strong id="totalTarefas">0</strong>
+            </article>
+            <article class="cartao-resumo">
+                <span>⏳ Pendentes</span>
+                <strong id="tarefasPendentes">0</strong>
+            </article>
+            <article class="cartao-resumo">
+                <span>✅ Concluídas</span>
+                <strong id="tarefasConcluidas">0</strong>
+            </article>
+            <article class="cartao-resumo">
+                <span>⚠️ Atrasadas</span>
+                <strong id="tarefasAtrasadas">0</strong>
+            </article>
+        </section>
+
+        <section class="painel">
+            <h2>➕ Adicionar nova tarefa</h2>
+            <p class="subtitulo">Anote suas atividades assim que receber uma tarefa.</p>
+
+            <form id="formTarefa">
+                <div class="campo">
+                    <label for="titulo">Nome da tarefa</label>
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Ex.: Exercícios de matemática"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="materia">Matéria</label>
+                    <select id="materia" required>
+                        <option value="">Selecione a matéria</option>
+                        <option>Matemática</option>
+                        <option>Português</option>
+                        <option>História</option>
+                        <option>Geografia</option>
+                        <option>Ciências</option>
+                        <option>Física</option>
+                        <option>Química</option>
+                        <option>Biologia</option>
+                        <option>Inglês</option>
+                        <option>Artes</option>
+                        <option>Educação Física</option>
+                        <option>Outra</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="prazo">Data de entrega</label>
+                    <input type="date" id="prazo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição (opcional)</label>
+                    <input
+                        type="text"
+                        id="descricao"
+                        placeholder="Detalhes da atividade"
+                        maxlength="250"
+                    >
+                </div>
+
+                <button type="submit" class="botao botao-principal">
+                    + Salvar tarefa
+                </button>
+            </form>
+
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="painel lista-painel">
+            <div class="cabecalho-lista">
+                <div>
+                    <h2>📋 Minhas tarefas</h2>
+                    <p class="subtitulo">Acompanhe tudo o que você precisa fazer.</p>
+                </div>
+                <label class="filtro-label" for="filtro">
+                    Filtrar:
+                    <select id="filtro">
+                        <option value="todas">Todas</option>
+                        <option value="pendentes">Pendentes</option>
+                        <option value="concluidas">Concluídas</option>
+                        <option value="atrasadas">Atrasadas</option>
+                    </select>
+                </label>
+            </div>
+
+            <div id="listaTarefas" class="lista-tarefas"></div>
+        </section>
+
+        <section class="dica">
+            <span class="dica-icone">💡</span>
+            <div>
+                <h3>Dica para não esquecer!</h3>
+                <p>
+                    Confira sua lista todos os dias e registre cada tarefa assim
+                    que o professor passar a atividade.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>EstudaFácil © 2026 — Estudar com organização faz a diferença!</p>
+    </footer>
+</body>
+</html>
